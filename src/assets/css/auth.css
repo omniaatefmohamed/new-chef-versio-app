@@ -1,0 +1,111 @@
+.squer-box-icon{
+    width: 93px !important;
+    height: 93px;
+    background-color: #FFFFFF;
+    box-shadow: 0 12px 46px rgba(0, 54, 23, 0.15)  ; 
+    border-radius: 25px;
+    justify-content: center;
+}
+.icon-image{
+    margin-top: 17px;
+    margin-right: 4px;
+    width: 59px;
+    height: 62px;
+}
+.icon-image-profile{
+    margin-top: 17px;
+    margin-right: 7px;
+    width: 52px;
+    height: 62px;
+
+}
+.icon-margin{
+    margin-top: 70px !important;
+    margin-bottom: 30px;
+}
+.main-title{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    color:#282929;
+    text-align: center;
+}
+.form-padding{
+    padding-top: 70px;
+}
+
+element.style {
+}
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+}
+.form-control{
+    direction: rtl !important;
+
+}
+.new-form-edit{
+    padding-right: 40px;
+    position: relative;
+    height: 60px;
+    border-radius: 12px;
+    border-color: #ECECEC;
+    margin-bottom: 15px;
+
+}
+.added-postion{
+    position: relative;
+}
+.icon-position{
+    position: absolute;
+    top: 19px;
+    right: 24px;
+    z-index: 99;
+
+}
+.new-form-edit:focus{
+    border-color: #ee783c;
+}
+.custom-btn{
+    background-color:  #ee783c;
+    height: 60px;
+    border-color: #ee783c;
+    border-radius: 12px;
+    color: #FFFFFF;
+    width: 100%;
+}
+.enterWith{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color:#232323;
+   
+}
+.hasNoAccount{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color:rgba(0, 0, 0, 0.50);
+    text-align: center;
+   
+}
+.noAccount-padding{
+    padding-top: 36px;
+    padding-bottom: 36px;
+}
+.custom-newAccount-btn{
+    background-color: #ECECEC;
+    height: 60px;
+    border-color: #ECECEC;
+    border-radius: 12px;
+    color: #646464;
+    width: 100%;
+    font-weight: 700;
+    font-size: 16px;
+    padding-top: 15px;
+
+    
+}
