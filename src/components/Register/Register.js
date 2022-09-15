@@ -1,3 +1,4 @@
+import React , {useState} from 'react'
 import {
     Row,
     Stack,
@@ -9,7 +10,28 @@ import {
 } from "react-bootstrap";
 //   import { Link } from "react-router-dom";
 import "../../assets/css/auth.css"
-function Signup() {
+function Register() {  
+    const baseUrl="http://beta.cheefonline.com/public/api";
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [phone, setPhone] = useState("");
+    // const navigate  = useNavigate()
+    // const[repeatPassword,setRepeatPassword] = useState("");
+    async function  SignUp () {
+       let signUpParams = {name,password,email,phone}
+       console.log(signUpParams)
+       let result = await fetch (`${baseUrl}/register`,{
+        method: "POST",
+        body:JSON.stringify(signUpParams),
+        headers:{
+            "Content-Type":'application/json',
+            "Accept":'application/json'
+        }
+       })
+       result = await result.json()
+       localStorage.setItem("USER-INFO",JSON.stringify(result))
+    }
     return (
         <Container fluid>
             <Row className="justify-content-center icon-margin">
@@ -42,6 +64,8 @@ function Signup() {
                                     type="text"
                                     className="new-form-edit"
                                     placeholder="الاسم بالكامل"
+                                    onChange={(e) => {setName(e.target.value)}}
+                                    value={name}
                                 />
                             </Col>
                         </Form.Group>
@@ -58,10 +82,29 @@ function Signup() {
                                     type="email"
                                     className="new-form-edit"
                                     placeholder="البريد الالكترونى "
+                                    onChange={(e) => {setEmail(e.target.value)}}
+                                    value={email}
                                 />
                             </Col>
                         </Form.Group>
-
+                        <Form.Group as={Row} controlId="formHorizontalFirstName">
+                            <Col sm={12} className="added-postion">
+                                <img
+                                    src="/img/ic_email.png"
+                                    width="22"
+                                    height="18"
+                                    className="icon-position"
+                                />
+                                <Form.Control
+                                    dir="rtl"
+                                    type="number"
+                                    className="new-form-edit"
+                                    placeholder="رقم الهاتف"
+                                    onChange={(e) => {setPhone(e.target.value)}}
+                                    value={phone}
+                                />
+                            </Col>
+                        </Form.Group>
                         <Form.Group as={Row} controlId="formHorizontalLastName">
                             <Col sm={12} className="added-postion">
                                 <img
@@ -73,13 +116,13 @@ function Signup() {
                                 <Form.Control
                                     className="new-form-edit"
                                     type="password"
-
-
                                     placeholder=" كتابة كلمة المرور"
+                                    onChange={(e) => {setPassword(e.target.value)}}
+                                    value={password}
                                 />
                             </Col>
                         </Form.Group>
-                        <Form.Group as={Row} controlId="formHorizontalLastName">
+                        {/* <Form.Group as={Row} controlId="formHorizontalLastName">
                             <Col sm={12} className="added-postion">
                                 <img
                                     src="/img/icx_password.png"
@@ -91,15 +134,18 @@ function Signup() {
                                     className="new-form-edit"
                                     type="password"
                                     placeholder="أعد كتابة كلمة المرور"
+                                    onChange={(e) => {setRepeatPassword(e.target.value)}}
+                                    value={repeatPassword}
                                 />
                             </Col>
-                        </Form.Group>
+                        </Form.Group> */}
                         <Form.Group as={Row}>
                             <Col sm={12}>
                                 <Button
                                     variant="secondary"
                                     size="lg"
                                     className="custom-btn mt-2"
+                                    onClick={SignUp}
                                 >
                                     <Spinner
                                         as="span"
@@ -148,4 +194,4 @@ function Signup() {
     )
 }
 
-export default Signup;
+export default Register;
